@@ -1,8 +1,10 @@
-streamlit==1.32.2
-langchain==0.1.14
-langchain_google_genai==0.0.7
-duckduckgo-search==2.9.5
-protobuf==4.25.1
-google-api-core==2.17.1
-google-auth==2.29.0
-google-generativeai==0.4.1
+LangChain 0.1.14
+
+Gemini 2.0 Flash (via langchain_google_genai)
+
+DuckDuckGo for real-time search
+
+Hardcoded API key
+
+Streamlit for user interaction
+

@@ -8,10 +8,10 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 logging.getLogger("langchain").setLevel(logging.WARNING)
 logging.getLogger("google").setLevel(logging.WARNING)
 
-# Hardcoded Gemini API Key (⚠️ use secrets in production!)
+# Hardcoded Gemini API Key (⚠️ avoid hardcoding in production!)
 GEMINI_API_KEY = "AIzaSyCtD7pFRnyEX-0BxEvqI7QLpHl9fz_VWYw"
 
-# --- Initialize Gemini model ---
+# Initialize Gemini model
 def get_gemini_model():
     try:
         model = ChatGoogleGenerativeAI(
@@ -23,7 +23,7 @@ def get_gemini_model():
         st.error(f"❌ Gemini initialization failed: {e}")
         return None
 
-# --- Initialize DuckDuckGo tool ---
+# Initialize DuckDuckGo search tool
 def get_search_tool():
     try:
         return DuckDuckGoSearchResults()
@@ -31,7 +31,7 @@ def get_search_tool():
         st.error(f"❌ DuckDuckGo tool failed to initialize: {e}")
         return None
 
-# --- Create agent ---
+# Create the agent with model and tool
 def create_agent(model, tools):
     try:
         return initialize_agent(
@@ -44,7 +44,7 @@ def create_agent(model, tools):
         st.error(f"❌ Failed to create agent: {e}")
         return None
 
-# --- Streamlit UI ---
+# Streamlit UI
 st.set_page_config(page_title="🧠 Ask Gemini (Real-Time Q&A)", page_icon="🔍")
 st.title("🧠 Gemini Real-Time Q&A with 🔎 DuckDuckGo")
 st.markdown("Ask anything about current events, news, or recent facts. Powered by Google Gemini + DuckDuckGo.")

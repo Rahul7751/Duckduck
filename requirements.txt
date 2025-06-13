@@ -6,3 +6,4 @@ protobuf==4.25.1
 google-api-core==2.17.1
 google-auth==2.29.0
 google-generativeai==0.3.2
+duckduckgo-search==2.9.5
